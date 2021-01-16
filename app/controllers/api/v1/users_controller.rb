@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.all.includes(:projects)
 
     render json: @users
   end
