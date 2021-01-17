@@ -19,7 +19,7 @@ jomarie = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Nam
 
 puts 'Creating projects'
 ['Candidate', 'Client'].each do |ele|
-    Project.create!(title: ele, user_id: jomarie.id, date: '2021-1-16')
+    Project.create!(title: ele, user_id: jomarie.id, date: '2021-01-14')
 end
 
 puts 'Creating tasks'
