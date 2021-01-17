@@ -6,6 +6,6 @@ class ClientCallSerializer < ActiveModel::Serializer
   end
 
   def user
-    self.object.user.firstName + ' ' + self.object.user.lastName
+    self.object.user.first_name + ' ' + self.object.user.last_name
   end
 end

@@ -46,6 +46,6 @@ class Api::V1::CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def company_params
-      params.require(:company).permit(:name, :industry, :address, :poc_name, :poc_email, :poc_number, :user_id)
+      params.require(:company).permit(:name, :industry, :address, :poc_name, :poc_email, :poc_number, :user_id, :notes)
     end
 end
