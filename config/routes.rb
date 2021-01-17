@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       resources :users
       resources :projects
       resources :tasks
+      resources :candidates
+      resources :candidate_calls
     end
   end
   
