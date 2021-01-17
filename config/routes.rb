@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :tasks
       resources :candidates
       resources :candidate_calls
+      resources :client_calls
       resources :open_jobs
       resources :companies
       resources :job_applications

@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all.includes(:projects, :candidate_calls, :candidates)
+    @users = User.all.includes(:projects, :candidate_calls, :candidates, :client_calls, :companies)
 
     render json: @users
   end

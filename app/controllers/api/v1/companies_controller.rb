@@ -3,7 +3,7 @@ class Api::V1::CompaniesController < ApplicationController
 
   # GET /companies
   def index
-    @companies = Company.all
+    @companies = Company.all.includes(:open_jobs, :client_calls)
 
     render json: @companies
   end

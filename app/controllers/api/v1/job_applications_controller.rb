@@ -3,7 +3,7 @@ class Api::V1::JobApplicationsController < ApplicationController
 
   # GET /job_applications
   def index
-    @job_applications = JobApplication.all
+    @job_applications = JobApplication.all.includes(:candidate, :open_job)
 
     render json: @job_applications
   end
