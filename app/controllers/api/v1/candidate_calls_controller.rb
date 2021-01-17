@@ -3,7 +3,7 @@ class Api::V1::CandidateCallsController < ApplicationController
 
   # GET /candidate_calls
   def index
-    @candidate_calls = CandidateCall.all
+    @candidate_calls = CandidateCall.all.includes(:candidate, :user)
 
     render json: @candidate_calls
   end
