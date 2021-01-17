@@ -17,6 +17,12 @@ puts 'Destroying candidates'
 Candidate.destroy_all
 puts 'Destroying candidate calls'
 CandidateCall.destroy_all
+puts 'Destroying companies'
+Company.destroy_all 
+puts 'Destroying open jobs'
+OpenJob.destroy_all
+puts 'Destroying job applications'
+JobApplication.destroy_all
 
 puts 'Creating Users'
 jomarie = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: '12345')
@@ -46,4 +52,28 @@ end
 
 20.times do 
     CandidateCall.create!(date: Faker::Date.backward(days: 70), time: Faker::Time.backward(days: 70, period: :afternoon, format: :short), notes: Faker::Lorem.sentence, user_id: 2, candidate_id: Candidate.all.sample.id)
+end
+
+puts 'Creating Companies'
+
+20.times do 
+    Company.create!(name: Faker::Company.name, industry: Faker::Company.industry, address: Faker::Address.full_address, poc_name: Faker::FunnyName.name, poc_email: Faker::Internet.email, poc_number: Faker::PhoneNumber.phone_number, user_id: 2)
+end
+
+puts 'Creating open jobs'
+
+20.times do 
+    OpenJob.create!(title: Faker::Job.title , description: Faker::Job.key_skill, pay: 24 , due_date: Faker::Date.forward(days: 30), user_id: 2, company_id: Company.all.sample.id)
+end
+
+puts 'Creating job applications'
+
+20.times do 
+    JobApplication.create!(candidate_id: Candidate.all.sample.id, open_job_id: OpenJob.all.sample.id, red: true)
+end
+20.times do 
+    JobApplication.create!(candidate_id: Candidate.all.sample.id, open_job_id: OpenJob.all.sample.id, green: true)
+end
+10.times do 
+    JobApplication.create!(candidate_id: Candidate.all.sample.id, open_job_id: OpenJob.all.sample.id, yellow: true)
 end

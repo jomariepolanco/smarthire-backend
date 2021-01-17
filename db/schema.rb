@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_013908) do
+ActiveRecord::Schema.define(version: 2021_01_17_153032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,39 @@ ActiveRecord::Schema.define(version: 2021_01_17_013908) do
     t.string "city"
     t.string "state"
     t.string "zipcode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "industry"
+    t.string "address"
+    t.string "poc_name"
+    t.string "poc_email"
+    t.string "poc_number"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "job_applications", force: :cascade do |t|
+    t.integer "candidate_id"
+    t.integer "open_job_id"
+    t.boolean "red", default: false
+    t.boolean "yellow", default: false
+    t.boolean "green", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "open_jobs", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "pay"
+    t.date "due_date"
+    t.integer "user_id"
+    t.integer "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
