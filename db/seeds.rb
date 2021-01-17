@@ -57,7 +57,7 @@ end
 puts 'Creating Companies'
 
 20.times do 
-    Company.create!(name: Faker::Company.name, industry: Faker::Company.industry, address: Faker::Address.full_address, poc_name: Faker::FunnyName.name, poc_email: Faker::Internet.email, poc_number: Faker::PhoneNumber.phone_number, user_id: 2)
+    Company.create!(name: Faker::Company.name, industry: Faker::Company.industry, address: Faker::Address.full_address, poc_name: Faker::FunnyName.name, poc_email: Faker::Internet.email, poc_number: Faker::PhoneNumber.phone_number)
 end
 
 puts 'Creating open jobs'

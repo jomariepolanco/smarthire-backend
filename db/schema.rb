@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2021_01_17_153032) do
     t.string "poc_name"
     t.string "poc_email"
     t.string "poc_number"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
