@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :open_jobs
       resources :companies
       resources :job_applications
+      post '/login', to: 'auth#create'
+      get '/profile', to: 'users#profile'
     end
   end
   
