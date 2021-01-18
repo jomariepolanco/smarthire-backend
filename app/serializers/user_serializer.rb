@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :email, :password, :tasks, :candidate_calls, :client_calls
+  attributes :id, :first_name, :last_name, :email, :tasks, :candidate_calls, :client_calls
 
   def tasks 
     self.object.projects.each do |pro|
