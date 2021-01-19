@@ -7,5 +7,7 @@ class User < ApplicationRecord
     has_many :candidates, through: :candidate_calls
     has_many :companies, through: :open_jobs
 
+    validates :email, uniqueness: true
+
     has_secure_password
 end
