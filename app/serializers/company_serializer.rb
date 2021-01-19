@@ -1,5 +1,7 @@
 class CompanySerializer < ActiveModel::Serializer
-  attributes :id, :name, :industry, :address, :poc_name, :poc_email, :poc_number, :users, :calls, :notes, :jobs
+  attributes :id, :name, :industry, :address, :poc_name, :poc_email, :poc_number, :users, :notes, :jobs
+
+  has_many :calls
 
   def users
     self.object.users.uniq

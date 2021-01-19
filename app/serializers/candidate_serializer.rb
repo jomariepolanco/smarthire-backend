@@ -1,5 +1,7 @@
 class CandidateSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :name, :cell_phone, :home_phone, :date_of_birth, :address, :city, :state, :zipcode, :calls, :notes 
+  attributes :id, :first_name, :last_name, :name, :cell_phone, :home_phone, :date_of_birth, :address, :city, :state, :zipcode, :notes 
+
+  has_many :calls
 
   def calls 
     self.object.candidate_calls 

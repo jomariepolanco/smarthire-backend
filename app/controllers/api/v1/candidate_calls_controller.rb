@@ -46,6 +46,6 @@ class Api::V1::CandidateCallsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def candidate_call_params
-      params.require(:candidate_call).permit(:date, :notes, :user_id, :candidate_id)
+      params.require(:candidate_call).permit(:date, :time, :notes, :user_id, :candidate_id)
     end
 end
