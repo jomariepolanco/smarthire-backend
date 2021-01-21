@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'bcrypt'
 
 puts 'Destroying users'
 User.destroy_all
@@ -25,7 +26,7 @@ puts 'Destroying job applications'
 JobApplication.destroy_all
 
 puts 'Creating Users'
-jomarie = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: '12345')
+jomarie = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password_digest: BCrypt::Password.create('12345'))
 
 puts 'Creating projects'
 ['Candidate', 'Client'].each do |ele|
