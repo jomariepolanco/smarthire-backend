@@ -1,5 +1,5 @@
 class OpenJobSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :pay, :due_date, :user_id, :company_id, :poc, :job_applications
+  attributes :id, :title, :description, :pay, :due_date, :user_id, :company_id, :poc, :job_applications, :company
 
   def poc 
     return {
@@ -7,6 +7,10 @@ class OpenJobSerializer < ActiveModel::Serializer
       email: self.object.company.poc_email,
       phone_number: self.object.company.poc_number
     }
+  end
+
+  def company
+    self.object.company.name
   end
 
   def job_applications
