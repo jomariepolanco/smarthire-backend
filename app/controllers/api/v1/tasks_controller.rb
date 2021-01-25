@@ -4,7 +4,6 @@ class Api::V1::TasksController < ApplicationController
   # GET /tasks
   def index
     @tasks = Task.all.includes(:project)
-
     render json: @tasks
   end
 
