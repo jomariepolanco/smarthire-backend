@@ -18,7 +18,9 @@ class CandidateSerializer < ActiveModel::Serializer
         green: app.green,
         yellow: app.yellow,
         red: app.red,
-        open_job: app.open_job.title
+        open_job: app.open_job.title,
+        open_job_id: app.open_job.id,
+        companyId: app.open_job.company.id
       }
     end
   end
