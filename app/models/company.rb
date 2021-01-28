@@ -3,5 +3,5 @@ class Company < ApplicationRecord
     has_many :users, through: :open_jobs
     has_many :client_calls
 
-    validates :name, uniqueness: true 
+    # validates :name, uniqueness: true 
 end
