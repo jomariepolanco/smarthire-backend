@@ -37,7 +37,7 @@ nelly = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.
 
 puts 'Creating projects'
 
-days = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", '15', "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
+days = ["01", "04", "05", "06", "07", "08", "11", "12", "13", "14", '15', "18", "19", "20", "21", "22", "25", "26", "27", "28", "29"]
 
 days.each do |num|
     Project.create!(title: "Candidate", user_id: jomarie.id, date: "2021-01-#{num}", archived: false)
